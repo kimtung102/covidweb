@@ -1,0 +1,195 @@
+:root {
+    --main-color: #8ACA2B;
+    --text-color: #555555;
+}
+
+section {
+    padding: 60px;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.title-light{
+    color: #AAAAAA;
+}
+.title-main{
+    color: var(--main-color);
+}
+
+.background{
+    background-color: #EEEEEE;
+}
+
+.vaccine-header{
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.pb50{
+    padding-bottom: 60px;
+}
+
+.news-description{
+    font-size: 1.6rem;
+}
+
+.logo {
+    font-size: 2.6rem;
+    color: var(--main-color);
+}
+
+.text18 {
+    font-size: 1.6rem;
+}
+
+.border-nav{
+    border-bottom: #E9E9E9 solid 1px;
+}
+
+.home-link {
+    color: var(--main-color);
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 20px 0;
+}
+
+.home-link:hover {
+    color: #a3d45a;
+}
+.nav-item{
+    font-size: 1.6rem;
+    color: #555555;
+    font-weight: 400;
+    text-decoration: none;
+
+}
+
+a.nav-item :hover {
+    color: #888888; 
+}
+
+
+.border-home-link{
+    border-top: #8ACA2B solid 2px;
+    border-bottom: #8ACA2B solid 8px;
+}
+
+.btn-send {
+    background-color: #EBEBEB;
+    border: #b4b4b4 solid 1px;
+    width: 80px;
+    height: 28px;
+    border-radius: 5px;
+}
+
+.form-control {
+    border-radius: 5px;
+    border: #888888 solid 1px;
+}
+
+.obligate {
+    color: red;
+}
+
+.label-text {
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.card {
+    border: none;
+    border-radius: 5px;
+    background-color: #F6F6F6;
+}
+
+.card-border {
+    border-bottom: #cccccc solid 1px;
+    padding-bottom: 10px;
+}
+
+.form-check-input:checked {
+    border-color: #555555;
+    background-color: #555555;
+}
+
+.btn-custom {
+    background-color: #8ACA2B;
+    color: white;
+    border: none;
+    width: 100px;
+    line-height: 1.5rem;
+    padding: 12px 5px;
+    border-radius: 5px;
+}
+.btn-custom:hover {
+    background-color: #a3d45a;
+}
+
+.carousel-item {
+    height: 25rem;
+    color: black;
+    position: relative;
+}
+
+.container {
+    position: absolute;
+    bottom :0;
+    left: 0;
+    right: 0;
+    padding-bottom: 60px;
+}
+
+a {
+    color: #555555;
+}
+
+a:hover {
+    color: #8f8f8f;
+}
+.icon {
+    font-size: 2.5rem;
+    color: black;
+}
+
+.icon2 {
+    font-size: 2.7rem;
+    color: black;
+}
+
+.title_login {
+    font-size: 2rem;
+    color: var(--main-color);
+    text-align: center;
+}
+
+.btn-custom-modal {
+    background-color: var(--main-color);
+    color: white;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+}
+.btn-custom-modal:hover {
+    background-color: #a3d45a;
+}
+
+.btn-custom-modal2 {
+    background-color: #cccccc;
+    color: white;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+}
+.btn-custom-modal2:hover {
+    background-color: #b4b4b4;
+}
