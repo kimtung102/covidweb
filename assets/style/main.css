@@ -192,4 +192,5 @@ a:hover {
 }
 .btn-custom-modal2:hover {
     background-color: #b4b4b4;
+    cursor: pointer;
 }
