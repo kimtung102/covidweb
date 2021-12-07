@@ -19,4 +19,9 @@
         echo "that bai";
     }
 
+    if($username == "admin" && $password == "admin"){
+        $_SESSION["user"] = $username;
+        header('Location: admin.php');
+    }
+
 ?>

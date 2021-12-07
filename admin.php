@@ -1,3 +1,10 @@
+<?php
+session_start();
+$username = $_SESSION["user"];
+if(!$username){
+  header("location:index.php");
+}
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -17,16 +24,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   </head>
   <body>
-  <?php
-  if(isset($_COOKIE['registerresult']) && $_COOKIE['registerresult'] == 1){
-    $message = "Đăng kí tài khoản thành công!";
-    echo "<script type='text/javascript'>alert('$message');</script>";
-  } elseif (isset($_COOKIE['registerresult']) && $_COOKIE['registerresult'] == 0){
-    $message = "Thất bại, vui lòng nhập đủ thông tin đăng kí";
-    echo "<script type='text/javascript'>alert('$message');</script>";
-  }
-  ?>
-
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light border-nav">
       <div class="container-fluid py-2">
@@ -38,8 +35,13 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarMarkup">
           <div class="navbar-nav me-5 text18">
-            <a class="nav-link me-2" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Đăng nhập</a>
-            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-dismiss="modal" data-bs-target="#registerModal">Đăng kí</a>
+            <span class= nav-link>Xin chào, <?php 
+            echo "$username";
+            ?></span>
+          <a class="nav-link ms-2" href="./admin.php">Trang chủ</a>
+          <a class="nav-link ms-2" href="./taikhoan.php">Quản lí tài khoản</a>
+          <a class="nav-link ms-2" href="./kbytmanager.php">Khai báo y tế</a>
+          <a class="nav-link ms-2" href="./index.php">Đăng xuất</a>
           </div>
         </div>
       </div>
@@ -167,43 +169,42 @@
             </div>
             <div class="col-lg-6">
               <h3 class="mb-4"><strong>Thông tin cá nhân</strong><span class="obligate"> *</span></h3>
-              <form method="POST" action= "./kbyt.php" name="kbyt-form"> 
               <div class="row justify-content-center">
                 <div class="col-lg-6 text-start"">
                   <div class="mb-3">
                     <label for="name" class="form-label label-text">Họ Tên <span class="obligate">*</span></label>
-                    <input type="text" class="form-control form-control-lg" name="name">
+                    <input type="text" class="form-control form-control-lg" id="name">
                   </div>
                   <div class="mb-3">
                     <label for="name" class="form-label label-text">Giới tính <span class="obligate">*</span></label>
-                    <input type="text" class="form-control form-control-lg" name="sex">
+                    <input type="text" class="form-control form-control-lg" id="name">
                   </div>
                   <div class="mb-3">
                     <label for="name" class="form-label label-text">Điện thoại <span class="obligate">*</span></label>
-                    <input type="text" class="form-control form-control-lg" name="phone">
+                    <input type="text" class="form-control form-control-lg" id="name">
                   </div>
                   <div class="mb-5">
                     <label for="name" class="form-label label-text">Email</label>
-                    <input type="text" class="form-control form-control-lg" name="email">
+                    <input type="text" class="form-control form-control-lg" id="name">
                   </div>
                   <h3 class="mt-5 mb-4"><strong>Địa chỉ nơi ở hiện tại</strong><span class="obligate"> *</span></h3>
                   <div class="mb-3">
                     <label for="name" class="form-label label-text">Tỉnh thành <span class="obligate">*</span></label>
-                    <input type="text" class="form-control form-control-lg" name="city">
+                    <input type="text" class="form-control form-control-lg" id="name">
                   </div>
                   <div class="mb-3">
                     <label for="name" class="form-label label-text">Quận / huyện <span class="obligate">*</span></label>
-                    <input type="text" class="form-control form-control-lg" name="district">
+                    <input type="text" class="form-control form-control-lg" id="name">
                   </div>
                   <div class="mb-3">
                     <label for="name" class="form-label label-text">Phường / xã <span class="obligate">*</span></label>
-                    <input type="text" class="form-control form-control-lg">
+                    <input type="text" class="form-control form-control-lg" id="name">
                   </div>
                 </div>
                 <div class="col-lg-6 text-start">
                   <div class="mb-3">
                     <label for="name" class="form-label label-text">Số CMND/CCCD/Hộ chiếu <span class="obligate">*</span></label>
-                    <input type="text" class="form-control form-control-lg" name="CMND">
+                    <input type="text" class="form-control form-control-lg" id="name">
                   </div>
                   <div class="row">
                     <div class="col-4">
@@ -243,7 +244,7 @@
                 </div>
                 <div class="mb-4">
                   <label for="name" class="form-label label-text">Số nhà, phố, tổ dân phố/thôn/đội <span class="obligate">*</span></label>
-                  <input type="text" class="form-control form-control-lg">
+                  <input type="text" class="form-control form-control-lg" id="name">
                 </div>
 
                 <div class="card mt-4">
@@ -253,13 +254,13 @@
                     </div>
                     <div class="d-flex flex-row mt-3">
                       <div class="form-check label-text me-3">
-                        <input class="form-check-input" type="radio" name="radio1" value="0" checked id="flexRadioDefault1">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                         <label class="form-check-label" for="flexRadioDefault1">
                           Không
                         </label>
                       </div>
                       <div class="form-check label-text">
-                        <input class="form-check-input" type="radio" name="radio1" value="1" id="flexRadioDefault2">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
                         <label class="form-check-label" for="flexRadioDefault2">
                           Có
                       </div>
@@ -274,22 +275,22 @@
                     </div>
                     <div class="d-flex flex-row mt-3">
                       <div class="form-check label-text me-3">
-                        <input class="form-check-input" type="radio" name="radio2" value="0" checked id="flexRadioDefault1">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault4" id="flexRadioDefault1">
                         <label class="form-check-label" for="flexRadioDefault1">
                           Không
                         </label>
                       </div>
                       <div class="form-check label-text">
-                        <input class="form-check-input" type="radio" name="radio2" value="1" id="flexRadioDefault2">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault4" id="flexRadioDefault2">
                         <label class="form-check-label" for="flexRadioDefault2">
                           Có
                       </div>
                     </div>
                   </div>
                 </div>
+
               </div>
-                <button type="submit" class="btn-custom mt-4 label-text">Gửi tờ khai</button>
-              </form>
+              <button type="submit" class="btn-custom mt-4 label-text">Gửi tờ khai</button>
             </div>
           </div>
         </div>
@@ -380,11 +381,11 @@
                         </div>
                         <div class="mb-3">
                           <label for="message-text" class="col-form-label">Password:</label>
-                          <input type="password" class="form-control" id="message-text" name = "password-l"></input>
+                          <input class="form-control" id="message-text" name = "password-l"></input>
                         </div>
                         <div class="row justify-content-between mb-5">
-                          <div class="col-md-auto ms-2"><a >Quên mật khẩu?</a></div>
-                          <div class="col-md-auto me-2"><a data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">Đăng kí</a></div>
+                          <div class="col-md-auto ms-2"><a href="#">Quên mật khẩu?</a></div>
+                          <div class="col-md-auto me-2"><a href="#" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">Đăng kí</a></div>
                         </div>
                         <div class="row justify-content-center mt-5">
                           <div class="col-md-6">
@@ -439,6 +440,7 @@
                   </div>
                 </div> 
               </div>
+
             </div>
           </div>
         </div>
