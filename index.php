@@ -375,16 +375,16 @@
                     <div class="col-md-6">
                       <form method = "POST" action= "./loginsubmit.php" name = "login-form">
                         <div class="mb-3">
-                          <label for="recipient-name" class="col-form-label">Username:</label>
-                          <input type="text" class="form-control" id="recipient-name" name = "username-l">
+                          <label for="recipient-name" class="col-form-label fs-5">Username:</label>
+                          <input type="text" class="form-control fs-5" id="recipient-name" name = "username-l">
                         </div>
                         <div class="mb-3">
-                          <label for="message-text" class="col-form-label">Password:</label>
-                          <input type="password" class="form-control" id="message-text" name = "password-l"></input>
+                          <label for="message-text" class="col-form-label fs-5">Password:</label>
+                          <input type="password" class="form-control fs-5" id="message-text" name = "password-l"></input>
                         </div>
                         <div class="row justify-content-between mb-5">
-                          <div class="col-md-auto ms-2"><a >Quên mật khẩu?</a></div>
-                          <div class="col-md-auto me-2"><a data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">Đăng kí</a></div>
+                          <div class="col-md-auto ms-2 fs-5"><a >Quên mật khẩu?</a></div>
+                          <div class="col-md-auto me-2 fs-5"><a data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">Đăng kí</a></div>
                         </div>
                         <div class="row justify-content-center mt-5">
                           <div class="col-md-6">
@@ -415,16 +415,16 @@
                     <div class="col-md-6">
                       <form method="POST" action="./registersubmit.php" name="register-form">
                         <div class="mb-3">
-                          <label for="recipient-name" class="col-form-label">Username:</label>
-                          <input type="text" class="form-control" id="recipient-name" name="username-r">
+                          <label for="recipient-name" class="col-form-label fs-5">Username:</label>
+                          <input type="text" class="form-control fs-5" id="recipient-name" name="username-r">
                         </div>
                         <div class="mb-3">
-                          <label for="message-text" class="col-form-label">Password:</label>
-                          <input type="password" class="form-control" id="message-text" name="password-r"></input>
+                          <label for="message-text" class="col-form-label fs-5">Password:</label>
+                          <input type="password" class="form-control fs-5" id="message-text" name="password-r"></input>
                         </div>
                         <div class="mb-5">
-                          <label for="message-text" class="col-form-label">Confirm password:</label>
-                          <input type="password" class="form-control" id="message-text" name="confirmpassword"></input>
+                          <label for="message-text" class="col-form-label fs-5">Confirm password:</label>
+                          <input type="password" class="form-control fs-5" id="message-text" name="confirmpassword"></input>
                         </div>
                         <div class="row justify-content-center mt-5">
                           <div class="col-md-6">

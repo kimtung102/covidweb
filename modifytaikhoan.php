@@ -25,28 +25,31 @@
       }
       ?>
 
+      <div>
+        <h1 class="text-center my-5">Chỉnh sửa tài khoản</h1>
       <div class="container-lg">
           <div class="row justify-content-center">
-            <div class="col-lg-4">
+            <div class="col-lg-3">
             <form method="POST" action="./handlemodify.php" name="register-form">
                 <div class="mb-3">
-                    <label for="recipient-name" class="col-form-label">Username:</label>
-                    <input type="text" class="form-control" id="recipient-name" name="username-m" value="<?php echo $row['username'];?>">
+                    <label for="recipient-name" class="col-form-label fs-4">Username:</label>
+                    <input type="text" class="form-control p-2 fs-4" id="recipient-name" name="username-m" value="<?php echo $row['username'];?>">
                 </div>
                 <div class="mb-3">
-                    <label for="message-text" class="col-form-label">Password:</label>
-                    <input type="text" class="form-control" id="message-text" name="password-m" value ="<?php echo $row['password'];?>">
+                    <label for="message-text" class="col-form-label fs-4">Password:</label>
+                    <input type="text" class="form-control p-2 fs-4" id="message-text" name="password-m" value ="<?php echo $row['password'];?>">
                 </div>
                 <div class="row justify-content-center mt-5">
-                    <div class="col-md-6">
+                    <div class="col-md-5">
                     <div class="d-flex flex-column">
-                        <button type="submit" class="btn-custom-modal mb-2">Lưu</button>
+                        <button type="submit" class="btn-custom-modal mb-2 fs-5">Lưu</button>
                     </div>
                     </div>
                 </div>
             </form>
             </div>
           </div>
+      </div>
       </div>
 
 

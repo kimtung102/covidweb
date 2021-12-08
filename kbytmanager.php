@@ -31,11 +31,11 @@
     </nav>
     
         <div>
-          <h2 class="text-center my-5">Thông tin khai báo y tế</h2>
+          <h1 class="text-center my-5">Thông tin khai báo y tế</h1>
           <div class="container-lg">
-            <div class="row justify-content-start mb-3">
-              <div class="col-lg-2">
-                <a type="submit" class="btn-custom mt-4 label-text nota">Xuất Excel</a>
+            <div class="row justify-content-start mb-4">
+              <div class="col-lg-3 ">
+                <a class="btn-custom fs-4  text-decoration-none" href="./export.php">Xuất Excel</a>
               </div>
             </div>
               <div class="row justify-content-center">

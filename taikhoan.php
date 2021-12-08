@@ -28,7 +28,7 @@
     </nav>
     <!-- table -->
       <div>
-          <h2 class="text-center my-5">Danh sách tài khoản</h2>
+          <h1 class="text-center my-5">Danh sách tài khoản</h1>
           <div class="container-lg">
               <div class="row justify-content-center">
                   <div class="col-md-10 table-responsive-lg text18">
