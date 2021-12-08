@@ -127,6 +127,7 @@ a.nav-item :hover {
     color: white;
     border: none;
     width: 100px;
+    text-decoration: none;
     line-height: 1.5rem;
     padding: 12px 5px;
     border-radius: 5px;
@@ -193,4 +194,8 @@ a:hover {
 .btn-custom-modal2:hover {
     background-color: #b4b4b4;
     cursor: pointer;
+}
+
+.nota {
+    text-decoration: none;
 }

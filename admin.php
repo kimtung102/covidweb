@@ -169,42 +169,43 @@ if(!$username){
             </div>
             <div class="col-lg-6">
               <h3 class="mb-4"><strong>Thông tin cá nhân</strong><span class="obligate"> *</span></h3>
+              <form method="POST" action= "./kbyt.php" name="kbyt-form"> 
               <div class="row justify-content-center">
                 <div class="col-lg-6 text-start"">
                   <div class="mb-3">
                     <label for="name" class="form-label label-text">Họ Tên <span class="obligate">*</span></label>
-                    <input type="text" class="form-control form-control-lg" id="name">
+                    <input type="text" class="form-control form-control-lg" name="name">
                   </div>
                   <div class="mb-3">
                     <label for="name" class="form-label label-text">Giới tính <span class="obligate">*</span></label>
-                    <input type="text" class="form-control form-control-lg" id="name">
+                    <input type="text" class="form-control form-control-lg" name="sex">
                   </div>
                   <div class="mb-3">
                     <label for="name" class="form-label label-text">Điện thoại <span class="obligate">*</span></label>
-                    <input type="text" class="form-control form-control-lg" id="name">
+                    <input type="text" class="form-control form-control-lg" name="phone">
                   </div>
                   <div class="mb-5">
                     <label for="name" class="form-label label-text">Email</label>
-                    <input type="text" class="form-control form-control-lg" id="name">
+                    <input type="text" class="form-control form-control-lg" name="email">
                   </div>
                   <h3 class="mt-5 mb-4"><strong>Địa chỉ nơi ở hiện tại</strong><span class="obligate"> *</span></h3>
                   <div class="mb-3">
                     <label for="name" class="form-label label-text">Tỉnh thành <span class="obligate">*</span></label>
-                    <input type="text" class="form-control form-control-lg" id="name">
+                    <input type="text" class="form-control form-control-lg" name="city">
                   </div>
                   <div class="mb-3">
                     <label for="name" class="form-label label-text">Quận / huyện <span class="obligate">*</span></label>
-                    <input type="text" class="form-control form-control-lg" id="name">
+                    <input type="text" class="form-control form-control-lg" name="district">
                   </div>
                   <div class="mb-3">
                     <label for="name" class="form-label label-text">Phường / xã <span class="obligate">*</span></label>
-                    <input type="text" class="form-control form-control-lg" id="name">
+                    <input type="text" class="form-control form-control-lg">
                   </div>
                 </div>
                 <div class="col-lg-6 text-start">
                   <div class="mb-3">
                     <label for="name" class="form-label label-text">Số CMND/CCCD/Hộ chiếu <span class="obligate">*</span></label>
-                    <input type="text" class="form-control form-control-lg" id="name">
+                    <input type="text" class="form-control form-control-lg" name="CMND">
                   </div>
                   <div class="row">
                     <div class="col-4">
@@ -244,7 +245,7 @@ if(!$username){
                 </div>
                 <div class="mb-4">
                   <label for="name" class="form-label label-text">Số nhà, phố, tổ dân phố/thôn/đội <span class="obligate">*</span></label>
-                  <input type="text" class="form-control form-control-lg" id="name">
+                  <input type="text" class="form-control form-control-lg">
                 </div>
 
                 <div class="card mt-4">
@@ -254,13 +255,13 @@ if(!$username){
                     </div>
                     <div class="d-flex flex-row mt-3">
                       <div class="form-check label-text me-3">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <input class="form-check-input" type="radio" name="radio1" value="0" checked id="flexRadioDefault1">
                         <label class="form-check-label" for="flexRadioDefault1">
                           Không
                         </label>
                       </div>
                       <div class="form-check label-text">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                        <input class="form-check-input" type="radio" name="radio1" value="1" id="flexRadioDefault2">
                         <label class="form-check-label" for="flexRadioDefault2">
                           Có
                       </div>
@@ -275,22 +276,22 @@ if(!$username){
                     </div>
                     <div class="d-flex flex-row mt-3">
                       <div class="form-check label-text me-3">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault4" id="flexRadioDefault1">
+                        <input class="form-check-input" type="radio" name="radio2" value="0" checked id="flexRadioDefault1">
                         <label class="form-check-label" for="flexRadioDefault1">
                           Không
                         </label>
                       </div>
                       <div class="form-check label-text">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault4" id="flexRadioDefault2">
+                        <input class="form-check-input" type="radio" name="radio2" value="1" id="flexRadioDefault2">
                         <label class="form-check-label" for="flexRadioDefault2">
                           Có
                       </div>
                     </div>
                   </div>
                 </div>
-
               </div>
-              <button type="submit" class="btn-custom mt-4 label-text">Gửi tờ khai</button>
+                <button type="submit" class="btn-custom mt-4 label-text">Gửi tờ khai</button>
+              </form>
             </div>
           </div>
         </div>

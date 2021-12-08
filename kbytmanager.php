@@ -33,12 +33,17 @@
         <div>
           <h2 class="text-center my-5">Thông tin khai báo y tế</h2>
           <div class="container-lg">
+            <div class="row justify-content-start mb-3">
+              <div class="col-lg-2">
+                <a type="submit" class="btn-custom mt-4 label-text nota">Xuất Excel</a>
+              </div>
+            </div>
               <div class="row justify-content-center">
                   <div class="table-responsive-lg text18">
                       <table class="table table-striped table-bordered align-middle">
                           <thead>
                               <tr>
-                                  <th scope="col">ID</th>
+                                  <th scope="col">STT</th>
                                   <th scope="col">Username</th>
                                   <th scope="col">Tên</th>
                                   <th scope="col">Giới tính</th>
@@ -49,16 +54,20 @@
                                   <th scope="col">Tỉnh/thành phố</th>
                                   <th scope="col">Câu hỏi 1</th>
                                   <th scope="col">Câu hỏi 2</th>
-                                  <th scope="col"></th>
+                                  <th scope="col">Khai báo gần nhất</th>
+                                  
                               </tr>
                           </thead>
                           <tbody>
                           <?php include './connect.php';
-                              $sql = "SELECT * FROM kbyt";
+                              $sql = "SELECT * FROM kbyt,(SELECT username, MAX(id) as maxid 
+                                                          FROM kbyt GROUP BY(username)) AS A 
+                                      WHERE kbyt.id = A.maxid";
                               $kbyts = mysqli_query($connect,$sql);
+                              $index =0;
                               foreach($kbyts as $kbyt){ ?>
                               <tr>
-                                  <th scope="row"><?php echo $kbyt['id'];?></th>
+                                  <th scope="row"><?php $index++; echo "$index";?></th>
                                       <td><?php echo $kbyt['username'];?></td>
                                       <td><?php echo $kbyt['name'];?></td>
                                       <td><?php echo $kbyt['sex'];?></td>
@@ -69,11 +78,8 @@
                                       <td><?php echo $kbyt['city'];?></td>
                                       <td><?php echo $kbyt['question1'];?></td>
                                       <td><?php echo $kbyt['question2'];?></td>
-                                      <td><div>
-                                          <a href="" type="button" class="btn btn-success">Sửa</a>
-                                          <a href="" type="button" class="btn btn-secondary ms-2">Xóa</a>
-                                        </div>
-                                      </td>
+                                      <td><?php echo $kbyt['createdDate'];?></td>
+                                      
                               </tr>
                               <?php } ?>
                           </tbody>

@@ -35,7 +35,7 @@
                       <table class="table table-striped table-bordered align-middle">
                           <thead>
                               <tr>
-                                  <th scope="col">ID</th>
+                                  <th scope="col">STT</th>
                                   <th scope="col">Username</th>
                                   <th scope="col">Password</th>
                                   <th scope="col">Ngày tạo</th>
@@ -47,16 +47,17 @@
                           <?php include './connect.php';
                               $sql = "SELECT * FROM user";
                               $users = mysqli_query($connect,$sql);
+                              $index=0;
                               foreach($users as $user){ ?>
                               <tr>
-                                  <th scope="row"><?php echo $user['id'];?></th>
+                                  <th scope="row"><?php $index++; echo "$index";?></th>
                                       <td><?php echo $user['username'];?></td>
                                       <td><?php echo $user['password'];?></td>
                                       <td><?php echo $user['createdDate'];?></td>
                                       <td><?php echo $user['modifiedDate'];?></td>
                                       <td><div>
-                                          <a href="" type="button" class="btn btn-success">Sửa</a>
-                                          <a href="" type="button" class="btn btn-secondary ms-2">Xóa</a>
+                                          <a href="modifytaikhoan.php?id=<?php echo $user['id'];?>" type="button" class="btn btn-success">Sửa</a>
+                                          <a href="deletetaikhoan.php?id=<?php echo $user['id'];?>" type="button" class="btn btn-secondary ms-2">Xóa</a>
                                         </div>
                                       </td>
                               </tr>
@@ -67,9 +68,6 @@
               </div>
           </div>
       </div>
-      
-
-
 
 
 
